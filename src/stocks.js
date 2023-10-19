@@ -16,20 +16,18 @@ class Stocks {
             console.error('Error fetching data:', error);
         }
     }
-}
 
+    async getPrices() {
+        this.storedData = await this.getData();
+        if (!this.storedData) return;
+        
+        let closingPrices = [];
+        for (let date in this.storedData["Monthly Time Series"]) {
+            closingPrices.push(parseFloat(this.storedData["Monthly Time Series"][date]['4. close']));
+        }
+        return closingPrices;
+    }
+    }
 export default Stocks;
 
 
-    // async getPrices() {
-    //     this.storedData = await this.getData();
-    //     if (!this.storedData) return;
-
-        
-    //     let closingPrices = {};
-
-    //     for (let date in this.storedData["Monthly Time Series"]) {
-    //         closingPrices[date] = this.storedData["Monthly Time Series"][date]['4. close'];
-    //     }
-    //     console.log(closingPrices);
-    // }
