@@ -2,9 +2,10 @@ import { select, scaleLinear, scaleUtc, extent, max, axisBottom, axisLeft, line 
 
 
 class View {
-    constructor(stock) {
+    constructor(stock, containerId) {
         this.stock = stock;
         this.storedData = null;
+        this.containerId = containerId;
     }
 
     async createData() {
@@ -24,7 +25,7 @@ class View {
         }
 
         //note to self: this is where we're grabbing the d3 element from the html doc  
-        const container = select("#d3-container");
+        const container = select(`#${this.containerId}`);
 
         const width = 500;
         const height = 500;
