@@ -1,0 +1,2 @@
+!function(){"use strict";var e;e=class{constructor(e){this.ele=e,this.ele.innerHTML="It's working"}},document.addEventListener("DOMContentLoaded",(()=>{console.log("Hello from index.js");const n=documentElementByID("main");new e(n)}))}();
+//# sourceMappingURL=main.js.map
