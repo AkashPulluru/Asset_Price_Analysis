@@ -15,6 +15,8 @@
         <div class="flex-item">
             <h2> Meta (META) </h2>
               <h3> Stock Price Over Time</h3>
+                <label for="stock1">Input First Ticker:</label>
+                <input type="text" id="stock1" name="stock1">
                 <div id="stock1-container"></div>
                 <figure class="stocks"></figure>
         </div>
@@ -22,6 +24,8 @@
         <div class="flex-item">
             <h2> Microsoft (MSFT) </h2>
               <h3> Stock Price Over Time</h3>
+                <label for="stock2">Input Second Ticker:</label>
+                <input type="text" id="stock2" name="stock2">
                 <div id="stock2-container"></div>
                 <figure class="stocks"></figure>
         </div>
@@ -29,6 +33,7 @@
     </div>
 
     <div class="correlation">
+      <button id="calculate-correlation">Calculate Correlation</button>
       <label for="correlation-output">Correlation Coefficient:</label>
       <input type="text" id="correlation-output" readonly>
      </div>
