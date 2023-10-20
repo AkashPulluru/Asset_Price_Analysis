@@ -12,3 +12,11 @@ Implementation Timeline -Friday: Onboard a second graph using d3, update interna
 -Thursday: Bonus features (convexity, ROI, etc)
 
 Please see a wireframe here https://wireframe.cc/6QfusH
+
+-Ongoing Implementation Timeline / Goals
+
+-Friday - finish styling two graphs, correlation
+-Weekend / Monday -User Input, Hover Button 
+-Tuesday - Work on incorporating different asset types
+-Wednesday - Continue work on different asset prices, calculate rate of return 
+-Thursday - misc / cleanup 

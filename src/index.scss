@@ -1,3 +1,5 @@
+
+//Orienting graphs 
 .flex-container {
     display: flex; 
     justify-content: space-between; 
@@ -6,6 +8,42 @@
 .flex-item {
     width: 50%;         
 }
+
+//General styles
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+//SVG styles 
+
+svg {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+// Axis styles
+g.axis {
+    color: #666;
+}
+
+g.axis text {
+    font-size: 12px;
+}
+
+g.axis path,
+g.axis line {
+    stroke: #666;
+    shape-rendering: crispEdges;
+}
+
 
 
 
