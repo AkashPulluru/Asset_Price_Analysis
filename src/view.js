@@ -24,9 +24,10 @@ class View {
             });
         }
 
-        //note to self: this is where we're grabbing the d3 element from the html doc  
+        //This is where we're grabbing the d3 element from the html doc  
         const container = select(`#${this.containerId}`);
 
+        //D3 graph elements are set here - it's currently implemented so both graphs are the same 
         const width = 500;
         const height = 500;
         const marginTop = 20;

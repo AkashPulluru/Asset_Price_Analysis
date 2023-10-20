@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA,gBACI,aACA,8BAGJ,WACI,U","sources":["webpack://javascript_project_asset_prices/./src/index.scss"],"sourcesContent":[".flex-container {\r\n    display: flex; \r\n    justify-content: space-between; \r\n}\r\n\r\n.flex-item {\r\n    width: 50%;         \r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n"],"names":[],"sourceRoot":""}

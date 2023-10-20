@@ -3,7 +3,7 @@ import axios from 'axios';
 class Stocks {
     constructor(ticker) {
         this.ticker = ticker;
-        this.apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${ticker}&apikey=SJRHLXJ8LB105D3F`;
+        this.apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${ticker}&outputsize=compact&apikey=SJRHLXJ8LB105D3F`;
         this.storedData = null;
     }
 
@@ -11,6 +11,7 @@ class Stocks {
         try {
             let response = await axios.get(this.apiUrl);
             this.storedData = response.data;
+            console.log(this.storedData);
             return this.storedData;
         } catch (error) {
             console.error('Error fetching data:', error);
