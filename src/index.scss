@@ -1,35 +1,87 @@
-
-//Orienting graphs 
+//Orienting graphs
 .flex-container {
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .flex-item {
-    width: 50%;         
+    width: 50%;
+    margin: 10%;
 }
 
-//General styles
+//Title styling
+h1 {
+    text-align: center;
+    font-size: 30px;     
+    margin-bottom: 10px;  
+    color: #7151c1;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #a1c4fd;
+}
+
+h3 {
+    text-align: center;
+    font-size: 20px;
+    color: #a1c4fd;
+}
+
+//Overarching styling
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    align-items: center;
+}
+
+.center-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-//SVG styles 
 
+//Corellation styling 
+
+.correlation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; 
+    border: 1px solid #666;
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px; 
+    margin-top: 20px; 
+}
+
+#correlation-output {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+//SVG Styles
 svg {
-    background-color: #fff;
+    background-color: #f7f5f5;
+    opacity: 0.5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
-// Axis styles
+//Axis Styles
 g.axis {
     color: #666;
 }
@@ -43,10 +95,3 @@ g.axis line {
     stroke: #666;
     shape-rendering: crispEdges;
 }
-
-
-
-
-
-
-

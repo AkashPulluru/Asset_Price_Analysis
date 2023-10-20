@@ -9,32 +9,30 @@
 </head>
 
 <body>
-    <h1> Correlation Calculator </h1>
-
-    <div class="flex-container">
-
+  <h1> Correlation Calculator </h1>
+    <div class="center-wrapper">
+      <div class="flex-container">
         <div class="flex-item">
             <h2> Meta (META) </h2>
-            <h3> Stock Price Over Time</h3>
-            <div id="stock1-container"></div>
-            <figure class="stocks"></figure>
+              <h3> Stock Price Over Time</h3>
+                <div id="stock1-container"></div>
+                <figure class="stocks"></figure>
         </div>
 
         <div class="flex-item">
             <h2> Microsoft (MSFT) </h2>
-            <h3> Stock Price Over Time</h3>
-            <div id="stock2-container"></div>
-            <figure class="stocks"></figure>
+              <h3> Stock Price Over Time</h3>
+                <div id="stock2-container"></div>
+                <figure class="stocks"></figure>
         </div>
-
+      </div>
     </div>
 
     <div class="correlation">
       <label for="correlation-output">Correlation Coefficient:</label>
       <input type="text" id="correlation-output" readonly>
-    </div>
-
-    <script type="module" src="./dist/main.js" defer></script>
+     </div>
+  <script type="module" src="./dist/main.js" defer></script>
 </body>
 
 </html>

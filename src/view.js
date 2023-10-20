@@ -2,29 +2,32 @@ import { select, scaleLinear, scaleUtc, extent, max, axisBottom, axisLeft, line 
 
 
 class View {
+    //accepts a stock ticker and the id of the html element where it should be rendered
     constructor(stock, containerId) {
         this.stock = stock;
         this.storedData = null;
         this.containerId = containerId;
     }
 
+    //grabs the stock data and calls presentData. Currently hardcoded to monthly time series
     async createData() {
         this.storedData = await this.stock.getData();
         this.presentData(this.storedData["Monthly Time Series"]);
     }
 
+    //sets svg graph elements and puts the graph in the html container
     presentData(storedData) {
         const stockData = [];
         for (let date in storedData) {
             stockData.push({
                 date: new Date(date),
 
-                //note to self: put the + in here to ensure that the value returns as a number 
+                //note: the + is in here to ensure that the value returns as a number 
                 price: +storedData[date]['4. close']
             });
         }
 
-        //This is where we're grabbing the d3 element from the html doc  
+        //this is where we're grabbing the d3 element from the html document  
         const container = select(`#${this.containerId}`);
 
         //D3 graph elements are set here - it's currently implemented so both graphs are the same 
@@ -35,7 +38,7 @@ class View {
         const marginBottom = 30;
         const marginLeft = 50;
 
-        //REVISIT - will not accept custom timescales, so bounding it by extent for now 
+        //D3 would not accept custom timescales, so it is bounded by extent for now 
 
         //all the variables called below are initialized right above 
         const x = scaleUtc()
@@ -68,10 +71,11 @@ class View {
         svg.append("path")
         //iterates through individual stock data
             .datum(stockData)
-            .attr("fill", "none")
-            .attr("stroke", "red")
-            .attr("stroke-width", 1.5)
-            .attr("d", line);
+            .attr("fill", "gray")
+            .attr("stroke", "blue")
+            .attr("stroke-width", 0.5)
+            .attr("d", line)
+            .attr("fill-opacity", 0.8);
 
         container.append(() => svg.node());
     }

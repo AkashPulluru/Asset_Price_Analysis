@@ -20,3 +20,18 @@ Please see a wireframe here https://wireframe.cc/6QfusH
 -Tuesday - Work on incorporating different asset types
 -Wednesday - Continue work on different asset prices, calculate rate of return 
 -Thursday - misc / cleanup 
+
+-features to implement 
+
+    style
+    -line chart animation 
+    -hover button 
+
+    functionality
+    -user input for ticker 
+    -user input for time series 
+    -News 
+
+    -different asset types 
+    -rate of return 
+    -Key metrics between the two over time 
