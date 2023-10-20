@@ -7,6 +7,7 @@
 .flex-item {
     width: 50%;
     margin: 10%;
+    margin-top: 5%; 
 }
 
 //Title styling
@@ -21,6 +22,7 @@ h2 {
     text-align: center;
     font-size: 25px;
     color: #a1c4fd;
+    margin-bottom: 2px;
 }
 
 h3 {
@@ -74,7 +76,7 @@ body {
 }
 
 #calculate-correlation {
-    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    background: linear-gradient(45deg, #9ba2aa, #c2e9fb);
     color: #333;
     padding: 10px 20px;
     margin-right: 20px;
@@ -117,4 +119,20 @@ g.axis path,
 g.axis line {
     stroke: #666;
     shape-rendering: crispEdges;
+}
+
+//Input Styling 
+
+input[type="text"] {
+    padding: 8px 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-color: #7151c1;
+    outline: none;
 }

@@ -28,6 +28,7 @@ Please see a wireframe here https://wireframe.cc/6QfusH
     -hover button 
 
     functionality
+    
     -user input for time series 
     -News 
 
