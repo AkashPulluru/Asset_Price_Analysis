@@ -73,10 +73,28 @@ body {
     border-radius: 5px;
 }
 
-.calculate-correlation{
-    padding-right: 20px; 
-    border: 1px solid #aaa;
+#calculate-correlation {
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    color: #333;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
 }
+
+#calculate-correlation:hover {
+    background: linear-gradient(45deg, #c2e9fb, #a1c4fd);
+    transform: scale(1.05);
+}
+
+#calculate-correlation:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 
 //SVG Styles
 svg {
