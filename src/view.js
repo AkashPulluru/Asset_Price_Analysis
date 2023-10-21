@@ -77,8 +77,33 @@ class View {
             .attr("d", line)
             .attr("fill-opacity", 0.8);
 
+        svg.selectAll('circle')
+            .data(stockData)
+            .enter().append('circle')
+            .attr('cx', d => x(d.date))
+            .attr('cy', d => y(d.price))
+            .attr('r', 3) // circle radius
+            .attr('fill', 'gray')
+            .on('mouseover', (event, d) => this.showTooltip(event, d))
+            .on('mouseout', (event, d) => this.hideTooltip(event, d));
+        
+
         container.append(() => svg.node());
     }
+
+    showTooltip(event, d) {
+        const tooltip = document.getElementById('tooltip');
+        tooltip.innerHTML = `Date: ${d.date.toDateString()}<br>Price: ${d.price}`;
+        tooltip.style.left = (event.pageX + 15) + 'px';
+        tooltip.style.top = (event.pageY - 28) + 'px';
+        tooltip.style.display = 'block';
+    }
+    
+    hideTooltip(event, d) {
+        const tooltip = document.getElementById('tooltip');
+        tooltip.style.display = 'none';
+    }
+    
 }
 
 export default View;

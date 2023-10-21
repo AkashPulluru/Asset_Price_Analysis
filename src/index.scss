@@ -95,6 +95,7 @@ body {
 #calculate-correlation:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 
@@ -104,6 +105,13 @@ svg {
     opacity: 0.5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+#tooltip {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px;
+    fill: #333;
 }
 
 //Axis Styles
@@ -136,3 +144,5 @@ input[type="text"]:focus {
     border-color: #7151c1;
     outline: none;
 }
+
+

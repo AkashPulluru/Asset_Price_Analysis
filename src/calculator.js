@@ -4,6 +4,20 @@ class Calculator {
         this.stock2 = stock2;
     }
 
+    async getNews() { 
+        let stock1 = this.stock1
+        let stock2 = this.stock2 
+        let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock1},${stock2}&limit=50&apikey=SJRHLXJ8LB105D3F`
+
+        try {
+            let news = await axios.get(newsApiUrl);
+            console.log(news.data);
+            this.newsData = news.data;
+            return this.newsData;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
 
     async calculateCorrelations() {
         //uses get prices method to get prices for each individual ticker

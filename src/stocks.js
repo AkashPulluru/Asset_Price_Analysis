@@ -13,6 +13,7 @@ class Stocks {
     async getData() {
         try {
             let response = await axios.get(this.apiUrl);
+            console.log(response.data);
             this.storedData = response.data;
             return this.storedData;
         } catch (error) {
@@ -27,9 +28,11 @@ class Stocks {
         if (!this.storedData) return;
         
         let closingPrices = [];
+        
         for (let date in this.storedData["Monthly Time Series"]) {
             closingPrices.push(parseFloat(this.storedData["Monthly Time Series"][date]['4. close']));
         }
+        console.log(closingPrices)
         return closingPrices;
     }
 
@@ -46,5 +49,8 @@ class Stocks {
     // }
     }
 export default Stocks;
+
+
+
 
 
