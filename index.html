@@ -9,27 +9,31 @@
 </head>
 
 <body>
-  <div id="tooltip" style="position: absolute; display: none; background: gray; border: 1px solid black; padding: 5px; pointer-events: none; opacity: 0.8;"></div>
+  <div id="tooltip"></div>
   <h1> Correlation Calculator </h1>
   <h2>Put in Tickers Below to Get Started</h2>
     <div class="center-wrapper">
       <div class="flex-container">
         <div class="flex-item">
             <h2> First Stock </h2>
-              <h3> Stock Price Over Time</h3>
+            <h3> Stock Price Over Time</h3>
+            <div class="input-group">
                 <label for="stock1">Input First Ticker:</label>
                 <input type="text" id="stock1" name="stock1">
-                <div id="stock1-container"></div>
-                <figure class="stocks"></figure>
+            </div>
+            <div id="stock1-container"></div>
+            <figure class="stocks"></figure>
         </div>
 
         <div class="flex-item">
             <h2> Second Stock </h2>
-              <h3> Stock Price Over Time</h3>
+            <h3> Stock Price Over Time</h3>
+            <div class="input-group">
                 <label for="stock2">Input Second Ticker:</label>
                 <input type="text" id="stock2" name="stock2">
-                <div id="stock2-container"></div>
-                <figure class="stocks"></figure>
+            </div>
+            <div id="stock2-container"></div>
+            <figure class="stocks"></figure>
         </div>
       </div>
     </div>

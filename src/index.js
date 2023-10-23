@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (correlation !== null) {
             console.log(`Correlation between ${stock1.ticker} and ${stock2.ticker} is: ${correlation}`);
             const correlationOutput = document.getElementById('correlation-output');
+            
+            //Decimal points for correlation output 
             correlationOutput.value = correlation.toFixed(4);
         } else {
             console.log("Failed to calculate the correlation.");
