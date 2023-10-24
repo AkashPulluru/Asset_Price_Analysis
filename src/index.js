@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         stock1 = new Stocks(ticker);
         view1 = new View(stock1, 'stock1-container');
         await view1.createData();
+        const newsData = await stock1.getNews();
+        view1.displayNews(newsData);
     });
 
     // Event listener for the second stock input
@@ -19,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         stock2 = new Stocks(ticker);
         view2 = new View(stock2, 'stock2-container');
         await view2.createData();
+        const newsData = await stock2.getNews();
+        view2.displayNews(newsData);
     });
 
     // Event listener for the calculate correlation button
@@ -30,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const calculator = new Calculator(stock1, stock2);
         const correlation = await calculator.calculateCorrelations();
-        console.log(calculator.getNews())
 
         if (correlation !== null) {
             console.log(`Correlation between ${stock1.ticker} and ${stock2.ticker} is: ${correlation}`);

@@ -5,7 +5,7 @@ class Stocks {
     //currently all API call values besides ticker are hardcoded 
     constructor(ticker) {
         this.ticker = ticker;
-        // this.apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${ticker}&outputsize=compact&apikey=SJRHLXJ8LB105D3F`;
+        this.apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${ticker}&outputsize=compact&apikey=SJRHLXJ8LB105D3F`;
         this.storedData = null;
     }
 
@@ -15,7 +15,9 @@ class Stocks {
             // let response = await axios.get(this.apiUrl);
             // console.log(response.data);
             // this.storedData = response.data;
+
             this.storedData = dt
+            
             return this.storedData;
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -35,6 +37,18 @@ class Stocks {
         }
         console.log(closingPrices)
         return closingPrices;
+    }
+
+    async getNews() { 
+        let stock = this.ticker
+        let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock}&apikey=SJRHLXJ8LB105D3F`
+        try {
+            let news = await axios.get(newsApiUrl);
+            this.newsData = news.data;
+            return this.newsData;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }
 
     // async getreturn() {

@@ -1,13 +1,14 @@
 //Orienting graphs
 .flex-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between; /* changed from space-evenly */
     gap: 2%;
 }
 
 .flex-item {
-    width: 48%; 
-    margin: 2%; 
+    width: 49%;  /* adjust the width */
+    margin: 0 1%;  /* adjust margin */
+    box-sizing: border-box;  /* new addition */
 }
 
 //Title styling
@@ -41,13 +42,16 @@ body {
     padding: 0;
     height: 100vh;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .center-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;   /* change from center to flex-start */
+    /* height: 100vh; */      /* remove or comment out this line */
+    padding-top: 20px;        /* optional: add some spacing on top */
 }
 
 
@@ -65,7 +69,8 @@ body {
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px; 
-    margin-top: 20px; 
+    margin-top: auto; 
+    width: 100%; 
 }
 
 #correlation-output {
@@ -73,13 +78,16 @@ body {
     padding: 5px;
     border: 1px solid #aaa;
     border-radius: 5px;
+    width: 90%; 
 }
+
 
 #calculate-correlation {
     background: linear-gradient(45deg, #9ba2aa, #c2e9fb);
     color: #333;
     padding: 10px 20px;
     margin-right: 20px;
+    margin-left: 20px;
     border: #333;
     border-radius: 5px;
     cursor: pointer;
@@ -105,7 +113,7 @@ svg {
     opacity: 1; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 520px;  /* changed from 500px to 100% */
+    width: 100%;  /* adjust to fit container */
     height: 500px; 
 }
 
@@ -140,22 +148,26 @@ g.axis line {
 
 //Input Styling 
 
-.input-group {
-    margin-bottom: 40px;  /* increased from 20px to 40px */
-    background: #e6e6e6; 
-    padding: 15px 10px;  
-    border-radius: 5px; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-    width: 500px;
+/* Styles for the background for the label and input */
+.ticker-background {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f7f5f5; /* matching the SVG background */
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"] {
-    box-sizing: border-box; /* Added this line to fix the overflow issue */
-    width: 100%;
-    padding: 10px 10px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+.input-group label {
+    white-space: nowrap; /* Ensures that the label doesn't break into multiple lines */
+    flex: none; /* Overrides the previous flex property to avoid pushing the input */
+    margin-right: 10px;
+}
+
+.input-group input[type="text"] {
+    flex-grow: 1; /* allows the input to grow and take available space */
+    width: auto;  /* overrides the width to be auto */
 }
 
 

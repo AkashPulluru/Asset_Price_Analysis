@@ -2,6 +2,7 @@ import { select, scaleLinear, scaleUtc, extent, max, axisBottom, axisLeft, line 
 
 
 class View {
+
     //accepts a stock ticker and the id of the html element where it should be rendered
     constructor(stock, containerId) {
         this.stock = stock;
@@ -26,7 +27,8 @@ class View {
         }
     
         const container = select(`#${this.containerId}`);
-        container.selectAll("svg").remove(); // Remove existing SVG
+
+        container.selectAll("svg").remove(); 
     
         const width = 500;
         const height = 500;
@@ -66,7 +68,7 @@ class View {
             .attr("stroke-width", 1.5)
             .attr("fill-opacity", 0) 
             .attr("d", line);
-        
+
         const totalLength = path.node().getTotalLength();
         path
             .attr("stroke-dasharray", totalLength + " " + totalLength)
@@ -77,10 +79,10 @@ class View {
             .on("end", () => { 
                 path.attr("fill-opacity", 0.8); 
                 this.drawCircles(svg, stockData, x, y); 
-            }); 
-        
-        container.append(() => svg.node());
-        
+            });
+
+        container.append(() => svg.node()); 
+
     }
 
     showTooltip(event, d) {
@@ -107,7 +109,22 @@ class View {
             .on('mouseover', (event, d) => this.showTooltip(event, d))
             .on('mouseout', (event, d) => this.hideTooltip(event, d));
     }
-    
+
+    displayNews(newsData) {
+        const container = select(`#${this.containerId}-news`);
+        container.selectAll("p").remove();
+        container.append("h3").text(`News for ${this.stock.ticker}`);
+        
+        if (newsData && newsData.length > 0) {
+            newsData.forEach(newsItem => {
+                container.append("p").text(newsItem.title);
+            });
+        } else 
+        {
+            container.append("p").text("No news available for this stock.");
+        }
+    }
+        
 }
 
 export default View;
