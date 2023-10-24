@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 class Calculator {
     constructor(stock1, stock2) {
         this.stock1 = stock1;
@@ -7,8 +9,8 @@ class Calculator {
     async getNews() { 
         let stock1 = this.stock1
         let stock2 = this.stock2 
-        let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock1},${stock2}&limit=50&apikey=SJRHLXJ8LB105D3F`
-
+        // let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock1},${stock2}&limit=50&apikey=SJRHLXJ8LB105D3F`
+        let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=SJRHLXJ8LB105D3F`
         try {
             let news = await axios.get(newsApiUrl);
             console.log(news.data);
@@ -69,5 +71,6 @@ class Calculator {
 
 
 export default Calculator;
+
 
 

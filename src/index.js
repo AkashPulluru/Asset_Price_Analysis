@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const calculator = new Calculator(stock1, stock2);
         const correlation = await calculator.calculateCorrelations();
+        console.log(calculator.getNews())
 
         if (correlation !== null) {
             console.log(`Correlation between ${stock1.ticker} and ${stock2.ticker} is: ${correlation}`);
