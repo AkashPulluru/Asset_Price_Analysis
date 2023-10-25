@@ -111,15 +111,18 @@ class View {
             .on('mouseout', (event, d) => this.hideTooltip(event, d));
     }
 
+    //Displays news data and sets the number of news articles to pull 
     displayNews(newsData) {
-        console.log(newsData);
+        let articleNumber = 3 
+
         // Update the target element for the news
         const container = select(`#${this.newsId}`);
         
-        container.selectAll('*').remove();  // Remove any previous data.
-        console.log(newsData.feed);
+        // Removes any previous data.
+        container.selectAll('*').remove();  
         
-        newsData.feed.slice(0, 3).forEach(newsItem => {
+
+        newsData.feed.slice(0, articleNumber).forEach(newsItem => {
             console.log(newsItem.title);
             container.append('h3').text(newsItem.title);
             container.append('a').attr('href', newsItem.url).text('Read More');

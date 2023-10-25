@@ -220,14 +220,13 @@ label {
 }
 
 //Social Icon Styling 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.icon {
+.link-icon {
     width: 32px;
     height: 32px;
+    display: inline-block;
+    background-size: contain; 
+}
+
+.link-icon + .link-icon {
+    margin-left: 20px;
 }

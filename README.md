@@ -1,37 +1,43 @@
-This project aims to create an easy to use interface to analyze historical asset price correllations. Users will be able to select from a dropdown to pick various assets and see their performance over time as well as their correlations with eachother. Future iterations of this project will include convexity calculations and rate of return calculations.
+Here's a README based on the provided code:
 
-Using the Correlation Calculator, users will be able to:
+---
 
-=Pick two different assets and see graphical representations of their historical performance -Switch individual assets piecemeal -Price graphs for each asset up to date as of EOD the previous business day -A correlation graph between the two assets' historical performance
+## Correlation Calculator
 
-In addition, this project will include: -Instructions and a README -(bonus) APIs to incorporate crypto price data -(bonus) The ability to hover and see asset prices at a given point in time -(bonus) Convexity calculations for each asset
+This web-based application allows users to calculate the Pearson correlation coefficient between two stock tickers over time. Alongside the correlation, the app provides visual charts of stock prices over time and recent news articles related to each stock.
 
-Technologies, Libraries, and APIs -This project will use the Alphadvantage public API for asset price data -This project will use the d3 library for graphics visualization -In the future, this project will seek to use other public APIs for other asset price data
+### Features:
 
-Implementation Timeline -Friday: Onboard a second graph using d3, update internal logic -Monday: Do correlation calculations, add third graph -Tuesday: Styling, finishing touches -Wednesday: (bonus) Add hover element, add other data feeds
--Thursday: Bonus features (convexity, ROI, etc)
+- **Correlation Calculation:** Calculates the Pearson correlation coefficient for two stocks.
+  
+- **Stock Price Over Time:** A visual representation of each stock's price over time using D3.
+  
+- **Stock News:** Displays recent news articles for each stock.
 
-Please see a wireframe here https://wireframe.cc/6QfusH
+### Usage:
 
--Ongoing Implementation Timeline / Goals
+1. Navigate to the Correlation Calculator page.
+2. Input two stock tickers in the designated input fields.
+3. View the respective stock's price over time and recent news articles.
+4. Click the "Calculate Correlation" button to view the Pearson correlation coefficient between the two stocks.
 
--Friday - finish styling two graphs, correlation
--Weekend / Monday -User Input, Hover Button 
--Tuesday - Work on incorporating different asset types
--Wednesday - Continue work on different asset prices, calculate rate of return 
--Thursday - misc / cleanup 
+### Technical Details:
 
--features to implement 
+- The front-end is written in **HTML** and **CSS**.
+  
+- The back-end logic is written in **JavaScript**. The primary classes are `Calculator`, `Stocks`, and `View`.
+  
+- Uses **Axios** for making API requests.
+  
+- Uses **D3** for visualizing stock prices over time.
+  
+- API calls are made to `www.alphavantage.co` to fetch the monthly time series of stock prices and recent news articles.
 
-    style
-    -line chart animation 
-    -hover button 
+### External Dependencies:
 
-    functionality
-    
-    -user input for time series 
-    -News 
+- Axios
+- D3
 
-    -different asset types 
-    -rate of return 
-    -Key metrics between the two over time 
+### Author:
+
+- [Akash Pulluru](https://www.linkedin.com/in/akashpulluru)
