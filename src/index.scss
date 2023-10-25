@@ -3,12 +3,13 @@
     display: flex;
     justify-content: space-between;
     gap: 10%;
+    overflow: visible;
 }
 
 .flex-item {
     width: 50%;
     margin-bottom: 10px;
-    
+    overflow: visible;
 }
 
 //Title styling
@@ -203,27 +204,41 @@ label {
     color: #4a5568;
 }
 
-//News
-.news-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-    color: #5a67d8;
-    width: 500px;
-    overflow: auto; 
+// News Tile Styling 
+.news-tile {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
 }
 
-.news-section h2 {
-    text-align: center;
-    font-size: 25px;
-    color: #4c51bf;
-    margin-bottom: 2px;
-    border-bottom: 2px solid #4c51bf;
-    padding-bottom: 5px;
-    width: fit-content;
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
 }
+
+.news-summary {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.news-link {
+    font-size: 14px;
+    color: #4c51bf;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-link:hover {
+    color: #2c3e8f;
+}
+
 
 //Header Styling 
 .link-icon {
