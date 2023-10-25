@@ -7,11 +7,11 @@
 .flex-container {
     display: flex;
     justify-content: space-between;
-    gap: 2%;  /* Adjusted from 40% to 2% */
+    gap: 2%;  
 }
 
 .flex-item {
-    width: 540px; /* Adjusted width */
+    width: 540px; 
     margin-bottom: 10px;
 }
 
@@ -20,13 +20,13 @@ h1 {
     text-align: center;
     font-size: 30px;
     margin-bottom: 10px;
-    color: #333;  /* Changed color to match .correlation */
+    color: #333;  
 }
 
 h2 {
     text-align: center;
     font-size: 25px;
-    color: #333;  /* Changed color to match .correlation */
+    color: #333;  
     margin-bottom: 2px;
     margin-top: 10px;
 }
@@ -211,8 +211,8 @@ label {
 
 .stock-section, .news-section {
     width: 100%;
-    max-width: 500px;  /* This ensures that they don't grow beyond 500px */
-    box-sizing: border-box; /* Ensures padding and border are included in width */
+    max-width: 500px;  
+    box-sizing: border-box; 
 }
 
 .news-tile {
@@ -319,5 +319,5 @@ label {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 100%;  /* Ensure it takes up the full width */
+    width: 100%;  
 }
