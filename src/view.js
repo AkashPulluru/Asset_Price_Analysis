@@ -113,20 +113,19 @@ class View {
 
     //Displays news data and sets the number of news articles to pull 
     displayNews(newsData) {
-        let articleNumber = 3 
-
+        let articleNumber = 3;
+    
         // Update the target element for the news
         const container = select(`#${this.newsId}`);
         
         // Removes any previous data.
         container.selectAll('*').remove();  
         
-
         newsData.feed.slice(0, articleNumber).forEach(newsItem => {
-            console.log(newsItem.title);
-            container.append('h3').text(newsItem.title);
-            container.append('a').attr('href', newsItem.url).text('Read More');
-            container.append('p').text(newsItem.summary);
+            const newsTile = container.append('div').attr('class', 'news-tile');
+            newsTile.append('h3').text(newsItem.title);
+            newsTile.append('a').attr('href', newsItem.url).text('Read More');
+            newsTile.append('p').text(newsItem.summary);
         });
     }
     
