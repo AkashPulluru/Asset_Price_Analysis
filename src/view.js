@@ -105,7 +105,7 @@ class View {
             .enter().append('circle')
             .attr('cx', d => x(d.date))
             .attr('cy', d => y(d.price))
-            .attr('r', 3)
+            .attr('r', 1.5)
             .attr('fill', 'gray')
             .on('mouseover', (event, d) => this.showTooltip(event, d))
             .on('mouseout', (event, d) => this.hideTooltip(event, d));
