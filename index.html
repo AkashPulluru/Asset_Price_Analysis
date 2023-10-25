@@ -72,6 +72,19 @@
       <input type="text" id="correlation-output" readonly>
     </div>
     <script type="module" src="./dist/main.js" defer></script>
+
+    <div id="sticky-note-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Instructions</h3>
+        <ol start="1">
+          <li>Input two stock tickers in the designated input fields.</li>
+          <li>View the respective stock's price over time and recent news articles.</li>
+          <li>Click the "Calculate Correlation" button to view the Pearson correlation coefficient between the two stocks.</li>
+        </ol>
+      </div>
+    </div>
+    
 </body>
 
 </html>
