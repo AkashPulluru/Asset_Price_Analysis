@@ -8,6 +8,7 @@
 .flex-item {
     width: 50%;
     margin-bottom: 10px;
+    
 }
 
 //Title styling
@@ -267,3 +268,12 @@ label {
     cursor: pointer;
   }
   
+  //Header styling 
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
