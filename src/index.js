@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('stock1').addEventListener('change', async (e) => {
         const ticker = e.target.value;
         stock1 = new Stocks(ticker);
-        view1 = new View(stock1, 'stock1-container');
+        view1 = new View(stock1, 'stock1-container', 'stock1-news');
         await view1.createData();
         const newsData = await stock1.getNews();
         view1.displayNews(newsData);
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('stock2').addEventListener('change', async (e) => {
         const ticker = e.target.value;
         stock2 = new Stocks(ticker);
-        view2 = new View(stock2, 'stock2-container');
+        view2 = new View(stock2, 'stock2-container', 'stock2-news');
         await view2.createData();
         const newsData = await stock2.getNews();
         view2.displayNews(newsData);

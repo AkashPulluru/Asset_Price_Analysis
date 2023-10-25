@@ -4,8 +4,9 @@ import { select, scaleLinear, scaleUtc, extent, max, axisBottom, axisLeft, line 
 class View {
 
     //accepts a stock ticker and the id of the html element where it should be rendered
-    constructor(stock, containerId) {
+    constructor(stock, containerId, newsId) {
         this.stock = stock;
+        this.newsId = newsId;
         this.storedData = null;
         this.containerId = containerId;
     }
@@ -111,19 +112,21 @@ class View {
     }
 
     displayNews(newsData) {
-        const container = select(`#${this.containerId}-news`);
-        container.selectAll("p").remove();
-        container.append("h3").text(`News for ${this.stock.ticker}`);
+        console.log(newsData);
+        // Update the target element for the news
+        const container = select(`#${this.newsId}`);
         
-        if (newsData && newsData.length > 0) {
-            newsData.forEach(newsItem => {
-                container.append("p").text(newsItem.title);
-            });
-        } else 
-        {
-            container.append("p").text("No news available for this stock.");
-        }
+        container.selectAll('*').remove();  // Remove any previous data.
+        console.log(newsData.feed);
+        
+        newsData.feed.slice(0, 3).forEach(newsItem => {
+            console.log(newsItem.title);
+            container.append('h3').text(newsItem.title);
+            container.append('a').attr('href', newsItem.url).text('Read More');
+            container.append('p').text(newsItem.summary);
+        });
     }
+    
         
 }
 
