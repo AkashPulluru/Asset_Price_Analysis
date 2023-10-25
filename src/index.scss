@@ -151,7 +151,8 @@ g.axis line {
     align-items: center;
     padding: 5px;
     width: 100%;
-    background: linear-gradient(45deg, #e2e8f0, #cbd5e0);
+    background: linear-gradient(45deg, #e2e8f0, #7e8e9e);
+    border: #355374;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
     margin-top: 15px;
@@ -180,7 +181,7 @@ g.axis line {
     flex-grow: 1;
     width: auto;
     padding: 5px;
-    border: 1px solid #a0aec0;
+    border: 1px solid #04254f;
     border-radius: 5px;
 }
 
