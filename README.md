@@ -5,6 +5,10 @@ This web-based application allows users to calculate the Pearson correlation coe
 
 You can find the calculator here (https://akashpulluru.github.io/Asset_Price_Analysis/)
 
+Application Interface: 
+
+![Alt text](image.png)
+
 ### Features:
 
 - **Correlation Calculation:** Calculates the Pearson correlation coefficient for two stocks.
