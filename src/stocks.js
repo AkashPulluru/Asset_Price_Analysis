@@ -2,14 +2,14 @@ import axios from 'axios';
 
 class Stocks {
 
-    //currently all API call values besides ticker are hardcoded 
+    //Currently all API call values besides ticker are hardcoded 
     constructor(ticker) {
         this.ticker = ticker;
         this.apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${ticker}&outputsize=compact&apikey=YF5KPRZNK16IVMYW`;
         this.storedData = null;
     }
 
-    //grabs the data from the api and stores it in storedData 
+    //Grabs the data from the api and stores it in storedData 
     async getData() {
         try {
             let response = await axios.get(this.apiUrl);
@@ -22,8 +22,7 @@ class Stocks {
         }
     }
 
-    //Used primarily for correlation calculation, grabs the price data
-    //Time series of monthly is currently hardcoded 
+    //Used primarily for correlation calculation - retrieves price data from data object. Monthly is hardcoded. 
     async getPrices() {
         this.storedData = await this.getData();
         if (!this.storedData) return;
@@ -36,7 +35,7 @@ class Stocks {
         return closingPrices;
     }
 
-    //Gets news data and populates it for each stock
+    //Retrieves news data from API and populates it for each stock
     async getNews() { 
         let stock = this.ticker
         let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock}&limit=2&apikey=YF5KPRZNK16IVMYW`

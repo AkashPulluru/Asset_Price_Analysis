@@ -43,7 +43,7 @@ class Calculator {
         const denominator = Math.sqrt((n * sumX2 - sumX ** 2) * (n * sumY2 - sumY ** 2));
 
         const correlation = numerator / denominator;
-
+        
         if (!isNaN(correlation)) {
             return correlation;
         } else {

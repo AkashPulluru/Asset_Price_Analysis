@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('sticky-note-modal');
     modal.style.display = "block";
   
-    // Close the modal when the close button is clicked
+    // Closes the modal when the close button is clicked
     const closeButton = document.querySelector('.close-btn');
     closeButton.addEventListener('click', () => {
       modal.style.display = "none";
     });
   
-    // Close the modal when clicking outside of it
+    // Closes the modal when clicking outside of it
     window.addEventListener('click', (event) => {
       if (event.target === modal) {
         modal.style.display = "none";
