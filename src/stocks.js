@@ -13,10 +13,8 @@ class Stocks {
     async getData() {
         try {
             let response = await axios.get(this.apiUrl);
-            console.log(response.data);
             this.storedData = response.data;
 
-            // this.storedData = dt
             
             return this.storedData;
         } catch (error) {
@@ -35,18 +33,16 @@ class Stocks {
         for (let date in this.storedData["Monthly Time Series"]) {
             closingPrices.push(parseFloat(this.storedData["Monthly Time Series"][date]['4. close']));
         }
-        console.log(closingPrices)
         return closingPrices;
     }
 
-    //Gets news data and populates it f or each stock
+    //Gets news data and populates it for each stock
     async getNews() { 
         let stock = this.ticker
         let newsApiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=${stock}&limit=2&apikey=YF5KPRZNK16IVMYW`
         try {
             let news = await axios.get(newsApiUrl);
             this.newsData = news.data;
-            console.log(news.data)
             return this.newsData;
         } catch (error) {
             console.error('Error fetching data:', error);

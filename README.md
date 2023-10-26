@@ -1,10 +1,9 @@
-Here's a README based on the provided code:
-
----
 
 ## Correlation Calculator
 
 This web-based application allows users to calculate the Pearson correlation coefficient between two stock tickers over time. Alongside the correlation, the app provides visual charts of stock prices over time and recent news articles related to each stock.
+
+You can find the calculator here (https://akashpulluru.github.io/Asset_Price_Analysis/)
 
 ### Features:
 
@@ -41,3 +40,4 @@ This web-based application allows users to calculate the Pearson correlation coe
 ### Author:
 
 - [Akash Pulluru](https://www.linkedin.com/in/akashpulluru)
+

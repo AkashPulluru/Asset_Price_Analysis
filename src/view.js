@@ -86,6 +86,7 @@ class View {
 
     }
 
+
     showTooltip(event, d) {
         const tooltip = document.getElementById('tooltip');
         tooltip.innerHTML = `Date: ${d.date.toDateString()}<br>Price: ${d.price}`;
