@@ -3,7 +3,7 @@ import { select, scaleLinear, scaleUtc, extent, max, axisBottom, axisLeft, line 
 
 class View {
 
-    //accepts a stock ticker and the id of the html element where it should be rendered
+    //Accepts a stock ticker and the id of the html element where it should be rendered
     constructor(stock, containerId, newsId) {
         this.stock = stock;
         this.newsId = newsId;
@@ -11,13 +11,13 @@ class View {
         this.containerId = containerId;
     }
 
-    //grabs the stock data and calls presentData. Currently hardcoded to monthly time series
+    //Grabs the stock data and calls presentData. Currently hardcoded to monthly time series
     async createData() {
         this.storedData = await this.stock.getData();
         this.presentData(this.storedData["Monthly Time Series"]);
     }
 
-    //sets svg graph elements and puts the graph in the html container
+    //Sets svg graph elements and puts the graph in the html container
     presentData(storedData) {
         const stockData = [];
         for (let date in storedData) {
