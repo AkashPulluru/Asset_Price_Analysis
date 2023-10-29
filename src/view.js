@@ -26,7 +26,9 @@ class View {
                 price: +storedData[date]['4. close']
             });
         }
-    
+        
+
+        //Setting up SVG graph elements 
         const container = select(`#${this.containerId}`);
 
         container.selectAll("svg").remove(); 
